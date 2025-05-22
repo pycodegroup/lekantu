@@ -20,6 +20,25 @@
     footer { background-color: #1A1A2E; color: white; padding: 30px 0; text-align: center; }
     footer a { color: #FFC300; text-decoration: none; }
     .carousel-inner img { height: 200px; object-fit: cover; }
+
+    
+  .form-label {
+    font-weight: 500;
+    color: #1A1A2E;
+  }
+
+  .form-control, .form-select {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .form-control:focus {
+    border-color: #00BFA6;
+    box-shadow: 0 0 0 0.2rem rgba(0,191,166,.25);
+  }
+
+
   </style>
 </head>
 <body>
@@ -78,13 +97,6 @@
         <!-- Onglet 3 -->
         
         <div class="tab-pane fade" id="tab3">
-          <div class="mb-3">
-          <label class="form-label">Les valeurs nutritionnelles sont exprimées pour :</label>
-          <select class="form-select" id="unite_nutrition" required>
-            <option value="100g">100 g (produit solide)</option>
-            <option value="100ml">100 ml (produit liquide)</option>
-          </select>
-        </div>
           <div class="row g-3">
             <div class="col-md-4"><label>Énergie (kcal) pour 100g/mL</label><input type="number" class="form-control" id="energie"></div>
             <div class="col-md-4"><label>Matières grasses (g)</label><input type="number" class="form-control" id="lipides"></div>
