@@ -47,13 +47,9 @@
       background-color: #00897B;
       transform: scale(1.05);
     }
-    .stats-section {
+    .stats-section, .faq-section, .partners-section, .about-section {
       background-color: white;
       padding: 60px 0;
-      text-align: center;
-    }
-    .stat-box {
-      margin-bottom: 30px;
     }
     .stat-box h3 {
       font-size: 2.5rem;
@@ -66,6 +62,10 @@
     .product-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .accordion-button {
+      background-color: var(--lekantu-bg);
+      color: var(--lekantu-dark);
     }
     footer {
       background-color: var(--lekantu-dark);
@@ -88,11 +88,11 @@
     </div>
   </header>
 
-  <section class="container py-5" data-aos="fade-up">
+  <section class="container py-5 about-section" data-aos="fade-up">
     <div class="text-center mb-4">
-      <h2>Pourquoi Lekantu ?</h2>
+      <h2>À propos de Lekantu</h2>
     </div>
-    <p class="lead text-center">Lekantu est une plateforme participative qui permet de recenser les produits alimentaires consommés localement. Ensemble, créons une base de données pour mieux comprendre, sensibiliser et agir.</p>
+    <p class="lead text-center">Lekantu est un projet de PyCodeGROUP qui vise à collecter, structurer et valoriser les données alimentaires locales de façon participative. Il s’agit de mieux comprendre les habitudes de consommation, identifier les produits, encourager la transparence, et soutenir la recherche et la santé publique.</p>
   </section>
 
   <section class="stats-section" data-aos="fade-up">
@@ -145,6 +145,67 @@
     </div>
     <div class="text-center mt-4">
       <a href="formulaire.html" class="btn btn-lekantu">Ajouter un produit</a>
+    </div>
+  </section>
+
+  <section class="faq-section" data-aos="fade-up">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2>Foire aux questions</h2>
+      </div>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+              Pourquoi Lekantu ?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">\            <div class="accordion-body">
+              Pour construire ensemble une base de données alimentaires ouverte et utile à la santé, la recherche, l'éducation et la souveraineté alimentaire.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Puis-je ajouter un produit anonyme ?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Oui ! Aucune donnée personnelle n'est demandée. Vous pouvez contribuer librement.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              Les données sont-elles publiques ?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Oui, les données validées seront disponibles publiquement pour des usages éducatifs et de recherche.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners-section" data-aos="fade-up">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2>Ils nous soutiennent</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6 col-md-3 mb-4">
+          <img src="assets/img/partner1.png" class="img-fluid" alt="Partenaire 1">
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+          <img src="assets/img/partner2.png" class="img-fluid" alt="Partenaire 2">
+        </div>
+      </div>
     </div>
   </section>
 
