@@ -33,6 +33,7 @@ Backend à venir :
 ## 📁 Arborescence du frontend
 
 lekantu/
+
 ├── index.html ← page d'accueil interactive
 
 ├── formulaire.html ← formulaire de contribution
