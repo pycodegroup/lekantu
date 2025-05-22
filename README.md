@@ -34,14 +34,23 @@ Backend à venir :
 
 lekantu/
 ├── index.html ← page d'accueil interactive
+
 ├── formulaire.html ← formulaire de contribution
+
 ├── mentions.html ← mentions légales
+
 ├── assets/
+
 │ ├── css/
+
 │ │ └── style.css
+
 │ ├── js/
+
 │ │ └── scripts.js
+
 │ └── img/
+
 │ └── ... (produits fictifs ou réels)
 
 ---
