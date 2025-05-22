@@ -35,6 +35,16 @@
       border-top: none;
       border-radius: 0 0 10px 10px;
     }
+    .tab-pane.fade {
+      transition: opacity 0.5s ease-in-out;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: #00BFA6;
+      box-shadow: 0 0 0 0.2rem rgba(0, 191, 166, 0.25);
+    }
+    .form-label {
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -45,7 +55,6 @@
       <p class="lead">Partage un produit que tu consommes et aide à nourrir la base de données citoyenne.</p>
     </div>
 
-    <!-- Onglets de navigation -->
     <ul class="nav nav-tabs" id="formTabs" role="tablist">
       <li class="nav-item" role="presentation">
         <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab">Produit</button>
@@ -61,11 +70,8 @@
       </li>
     </ul>
 
-    <!-- Contenu des onglets -->
     <form id="form-contribution">
       <div class="tab-content" id="formTabsContent">
-
-        <!-- Onglet 1 : Produit -->
         <div class="tab-pane fade show active" id="tab1" role="tabpanel">
           <div class="row g-3">
             <div class="col-md-6">
@@ -100,7 +106,6 @@
           </div>
         </div>
 
-        <!-- Onglet 2 : Ingrédients -->
         <div class="tab-pane fade" id="tab2" role="tabpanel">
           <div class="mb-3">
             <label class="form-label">Liste des ingrédients *</label>
@@ -116,7 +121,6 @@
           </div>
         </div>
 
-        <!-- Onglet 3 : Nutrition -->
         <div class="tab-pane fade" id="tab3" role="tabpanel">
           <div class="row g-3">
             <div class="col-md-4"><label>Énergie (kcal)</label><input type="number" class="form-control" id="energie"></div>
@@ -130,7 +134,6 @@
           </div>
         </div>
 
-        <!-- Onglet 4 : Photos -->
         <div class="tab-pane fade" id="tab4" role="tabpanel">
           <div class="mb-3">
             <label class="form-label">Photo du produit</label>
@@ -161,6 +164,12 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    document.getElementById("form-contribution").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("form-contribution").classList.add("d-none");
+      document.getElementById("confirmation").classList.remove("d-none");
+    });
   </script>
 </body>
 </html>
