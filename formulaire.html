@@ -120,6 +120,51 @@
       document.getElementById('confirmation').classList.remove('d-none');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+
+<!-- TRAITEMENT DONNEES -->
+
+    <script>
+document.getElementById("form-contribution").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const imageFile = document.getElementById("photo").files[0];
+  let imageUrl = "";
+
+  if (imageFile) {
+    const formData = new FormData();
+    formData.append("file", imageFile);
+    formData.append("upload_preset", "TON_UPLOAD_PRESET");
+
+    const upload = await fetch("https://api.cloudinary.com/v1_1/TON_CLOUD_NAME/image/upload", {
+      method: "POST",
+      body: formData
+    });
+    const data = await upload.json();
+    imageUrl = data.secure_url;
+  }
+
+  const payload = {
+    nom: document.getElementById("nom").value,
+    marque: document.getElementById("marque").value,
+    categorie: document.getElementById("categorie").value,
+    ingredients: document.getElementById("ingredients").value,
+    lieu: document.getElementById("lieu").value,
+    image: imageUrl
+  };
+
+  fetch("URL_SCRIPT_GOOGLE", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  }).then(res => res.text())
+    .then(() => {
+      document.getElementById("form-contribution").classList.add("d-none");
+      document.getElementById("confirmation").classList.remove("d-none");
+    }).catch(err => alert("Erreur : " + err));
+});
+</script>
+
   </script>
 </body>
 </html>
