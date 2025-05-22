@@ -1,72 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contribuer - Lekantu</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
   <style>
-    body {
-      background-color: #f9f6f0;
-      font-family: 'Poppins', sans-serif;
-    }
-    h1, h2 {
-      font-family: 'Montserrat', sans-serif;
-    }
-    .btn-lekantu {
-      background-color: #00BFA6;
-      color: white;
-      border: none;
-      font-weight: bold;
-    }
-    .btn-lekantu:hover {
-      background-color: #00897B;
-    }
-    .nav-tabs .nav-link.active {
-      background-color: #00BFA6;
-      color: white;
-    }
-    .tab-content {
-      background: white;
-      padding: 30px;
-      border: 1px solid #dee2e6;
-      border-top: none;
-      border-radius: 0 0 10px 10px;
-    }
-    .hero {
-      background: linear-gradient(145deg, #fff3e0, #ffffff);
-      padding: 100px 20px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      color: #1A1A2E;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #4e342e;
-    }
-    footer {
-      background-color: #1A1A2E;
-      color: white;
-      padding: 40px 0;
-    }
-    footer a {
-      color: #FFC300;
-      text-decoration: none;
-    }
+    body { background-color: #f9f6f0; font-family: 'Poppins', sans-serif; }
+    h1, h2 { font-family: 'Montserrat', sans-serif; }
+    .btn-lekantu { background-color: #00BFA6; color: white; border: none; font-weight: bold; }
+    .btn-lekantu:hover { background-color: #00897B; }
+    .nav-tabs .nav-link.active { background-color: #00BFA6; color: white; }
+    .tab-content { background: white; padding: 30px; border: 1px solid #dee2e6; border-top: none; border-radius: 0 0 10px 10px; }
+    .hero { background: linear-gradient(145deg, #fff3e0, #ffffff); padding: 100px 20px; text-align: center; }
+    .hero h1 { font-size: 3rem; color: #1A1A2E; }
+    .hero p { font-size: 1.2rem; color: #4e342e; }
+    footer { background-color: #1A1A2E; color: white; padding: 30px 0; text-align: center; }
+    footer a { color: #FFC300; text-decoration: none; }
+    .carousel-inner img { height: 200px; object-fit: cover; }
   </style>
 </head>
 <body>
+
+  <!-- HERO -->
   <header class="hero" data-aos="fade-in">
     <div class="container">
       <h1>Contribue à Lekantu</h1>
       <p>Partage un produit que tu consommes et aide à nourrir la base de données alimentaire citoyenne.</p>
+      <a href="index.html" class="btn btn-lekantu mt-3">Retour à l'accueil</a>
     </div>
   </header>
 
+  <!-- FORMULAIRE -->
   <div class="container py-5">
     <div class="text-center mb-5" data-aos="fade-down">
       <h2>Formulaire de contribution</h2>
@@ -74,83 +41,92 @@
     </div>
 
     <ul class="nav nav-tabs" id="formTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab">Produit</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab">Ingrédients</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab">Nutrition</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4" type="button" role="tab">Photos</button>
-      </li>
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1">Produit</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">Ingrédients</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3">Nutrition</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab4">Photos</button></li>
     </ul>
 
     <form id="form-contribution">
       <div class="tab-content" id="formTabsContent">
-        <!-- Onglet Produit, Ingrédients, Nutrition, Photos comme avant... -->
+        <!-- Onglet 1 -->
+        <div class="tab-pane fade show active" id="tab1">
+          <div class="row g-3">
+            <div class="col-md-6"><label>Nom *</label><input type="text" class="form-control" id="nom" required></div>
+            <div class="col-md-6"><label>Nom générique</label><input type="text" class="form-control" id="generic"></div>
+            <div class="col-md-6"><label>Marque / Artisan</label><input type="text" class="form-control" id="marque"></div>
+            <div class="col-md-6"><label>Quantité</label><input type="text" class="form-control" id="quantite"></div>
+            <div class="col-md-6"><label>Emballage</label><select class="form-select" id="emballage"><option>Sachet</option><option>Bocal</option><option>Carton</option></select></div>
+            <div class="col-md-6"><label>Lieu d’achat</label><input type="text" class="form-control" id="lieu"></div>
+          </div>
+        </div>
+
+        <!-- Onglet 2 -->
+        <div class="tab-pane fade" id="tab2">
+          <div class="mb-3"><label>Ingrédients *</label><textarea class="form-control" id="ingredients" rows="3" required></textarea></div>
+          <div class="mb-3"><label>Allergènes</label><input type="text" class="form-control" id="allergenes"></div>
+          <div class="mb-3"><label>Traces éventuelles</label><input type="text" class="form-control" id="traces"></div>
+        </div>
+
+        <!-- Onglet 3 -->
+        <div class="tab-pane fade" id="tab3">
+          <div class="row g-3">
+            <div class="col-md-4"><label>Énergie (kcal)</label><input type="number" class="form-control" id="energie"></div>
+            <div class="col-md-4"><label>Matières grasses</label><input type="number" class="form-control" id="lipides"></div>
+            <div class="col-md-4"><label>Dont saturés</label><input type="number" class="form-control" id="satures"></div>
+            <div class="col-md-4"><label>Glucides</label><input type="number" class="form-control" id="glucides"></div>
+            <div class="col-md-4"><label>Dont sucres</label><input type="number" class="form-control" id="sucres"></div>
+            <div class="col-md-4"><label>Protéines</label><input type="number" class="form-control" id="proteines"></div>
+            <div class="col-md-4"><label>Fibres</label><input type="number" class="form-control" id="fibres"></div>
+            <div class="col-md-4"><label>Sel</label><input type="number" class="form-control" id="sel"></div>
+          </div>
+        </div>
+
+        <!-- Onglet 4 -->
+        <div class="tab-pane fade" id="tab4">
+          <div class="mb-3"><label>Photo du produit</label><input class="form-control" type="file" id="photo"></div>
+          <div class="mb-3"><label>Photo des ingrédients</label><input class="form-control" type="file" id="photo_ingredients"></div>
+          <div class="mb-3"><label>Photo nutritionnelle</label><input class="form-control" type="file" id="photo_nutrition"></div>
+        </div>
       </div>
-      <div class="text-center mt-4">
-        <button type="submit" class="btn btn-lekantu px-4">Envoyer</button>
-      </div>
+      <div class="text-center mt-4"><button type="submit" class="btn btn-lekantu px-4">Envoyer</button></div>
     </form>
 
-    <div class="alert alert-success text-center mt-4 d-none" id="confirmation">
-      Merci pour ta contribution !
-    </div>
+    <div class="alert alert-success text-center mt-4 d-none" id="confirmation">Merci pour ta contribution !</div>
+  </div>
 
-    <div class="text-center mt-5">
-      <a href="index.html" class="btn btn-outline-secondary">Retour à l'accueil</a>
+  <!-- Carrousel -->
+  <div class="container my-5" data-aos="fade-up">
+    <h3 class="text-center mb-4">Derniers produits ajoutés</h3>
+    <div id="carouselProduits" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active"><img src="assets/img/contribution1.jpg" class="d-block w-100" alt="Produit 1"/></div>
+        <div class="carousel-item"><img src="assets/img/contribution2.jpg" class="d-block w-100" alt="Produit 2"/></div>
+        <div class="carousel-item"><img src="assets/img/contribution3.jpg" class="d-block w-100" alt="Produit 3"/></div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduits" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselProduits" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
     </div>
   </div>
 
-  <section class="container my-5" data-aos="fade-up">
-    <h3 class="text-center mb-4">Derniers produits ajoutés</h3>
-    <div id="carouselRecent" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="assets/img/sample1.jpg" class="d-block w-100" alt="Produit 1">
-        </div>
-        <div class="carousel-item">
-          <img src="assets/img/sample2.jpg" class="d-block w-100" alt="Produit 2">
-        </div>
-        <div class="carousel-item">
-          <img src="assets/img/sample3.jpg" class="d-block w-100" alt="Produit 3">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecent" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Précédent</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselRecent" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Suivant</span>
-      </button>
-    </div>
-  </section>
-
-  <footer class="text-center">
+  <!-- Footer -->
+  <footer>
     <div class="container">
       <p class="mb-1">© 2025 Lekantu – Un projet PyCodeGROUP</p>
       <p><a href="mentions.html">Mentions légales</a> · <a href="#">Cookies</a> · <a href="mailto:pycodegroup@gmail.com">Contact</a></p>
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-
-    document.getElementById("form-contribution").addEventListener("submit", async function(e) {
+    document.getElementById("form-contribution").addEventListener("submit", function (e) {
       e.preventDefault();
-      const confirmation = document.getElementById("confirmation");
-      this.classList.add("d-none");
-      confirmation.classList.remove("d-none");
+      document.getElementById("form-contribution").classList.add("d-none");
+      document.getElementById("confirmation").classList.remove("d-none");
       window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      // TODO: intégrer l'envoi vers Google Sheets + Cloudinary ici
     });
   </script>
 </body>
